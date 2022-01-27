@@ -7,6 +7,7 @@
   --right-btn-hover-color: rgb(87, 84, 236, 1);
   --hover-width: 75%;
   --other-width: 25%;
+  --speed: 800ms;
 }
 
 * {
@@ -57,6 +58,12 @@ h1 {
   border-color: var(--right-btn-hover-color);
 }
 
+.split.right,
+.split.left,
+.split.right::before,
+.split.left::before {
+  transition: all var(--speed) ease;
+}
 .container {
   position: relative;
   width: 100%;
@@ -114,4 +121,15 @@ h1 {
 
 .hover-right .left {
   width: var(--other-width);
+}
+
+@media (max-width: 800px) {
+  h1 {
+    font-size: 2rem;
+    top: 30%;
+  }
+  .btn {
+    padding: 1.2rem;
+    width: 12rem;
+  }
 }
